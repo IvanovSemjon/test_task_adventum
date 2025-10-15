@@ -195,18 +195,18 @@ if __name__ == "__main__":
         try:
             filename_csv = f'../data/{user_identifier}_posts_stats.csv'
             df.to_csv(filename_csv, index=False, encoding='utf-8')
-            print(f"✅ CSV сохранен: {filename_csv}")
+            print(f"CSV сохранен: {filename_csv}")
         except Exception as e:
-            print(f"❌ Ошибка сохранения CSV: {e}")
+            print(f"Ошибка сохранения CSV: {e}")
         
         # Сохранение в TXT
         try:
             filename_txt = f'../data/{user_identifier}_posts_stats.txt'
             with open(filename_txt, 'w', encoding='utf-8') as f:
                 f.write(df.to_string(index=False))
-            print(f"✅ TXT сохранен: {filename_txt}")
+            print(f"TXT сохранен: {filename_txt}")
         except Exception as e:
-            print(f"❌ Ошибка сохранения TXT: {e}")
+            print(f"Ошибка сохранения TXT: {e}")
         if user_identifier != 'test_data':
             print(f"Страница: https://vk.com/{user_identifier}")
         
@@ -269,13 +269,13 @@ WHERE Часов_с_предыдущего_поста > 0;
         try:
             with open('../sql/analysis_queries.sql', 'w', encoding='utf-8') as f:
                 f.write(sql_queries)
-            print(f"✅ SQL-запросы сохранены: ../sql/analysis_queries.sql")
+            print(f"SQL-запросы сохранены: ../sql/analysis_queries.sql")
         except Exception as e:
-            print(f"❌ Ошибка сохранения SQL: {e}")
+            print(f"Ошибка сохранения SQL: {e}")
         try:
             print("\nСтруктура таблицы:")
             print(df.head().to_string(index=False))
         except Exception as e:
             print(f"Ошибка вывода таблицы: {e}")
         
-        print(f"\n✅ Анализ завершен! Проверьте папку data/")
+        print(f"\nАнализ завершен! Проверьте папку data/")
